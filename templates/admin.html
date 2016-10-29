@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+{% module Template("head.html") %}
+
+<body>
+{% module Template("navbar.html") %}
+
+<div class="add_url">
+    <p>Get Data</p>
+    <div class="container">
+        <form method="GET" action="/get_data">
+            <button type="submit">Get Data</button>
+        </form>
+        {% try %}
+            {% if data %}
+                <table id="example">
+                    <thead>
+                        <tr>
+                            <th>Word</th>
+                            <th>Number of Repeats</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for word, no_of_repeats in data%}
+                            <tr>
+                                <td>{{word}}</td>
+                                <td>{{no_of_repeats}}</td>
+                            </tr>
+                            {% end %}
+                        {% end %}
+                    </tbody>
+                </table>
+            {% except %}
+        {% end %}
+    </div>
+</div>
+
+
+</body>
+<style type="text/css">
+body{
+  background: -webkit-linear-gradient(90deg,#959a96, #e8f0e9); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(90deg,#959a96, #e8f0e9); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(90deg,#959a96, #e8f0e9); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(90deg,#959a96, #e8f0e9); /* Standard syntax */
+}
+@media only screen and (min-width:768px) and (max-width: 50000px) {
+        .add_url {
+            width: 500px;
+            margin-top: 150px;
+            background: #fff;
+        }
+        .add_url p,h4 {
+            text-align: center;
+        }
+}
+@media only screen and (max-width:767px) {
+        .add_url {
+            width: 300px;
+            margin-top: 150px;
+            background: #fff;
+        }
+        .add_url p,h4 {
+            text-align: center;
+        }
+}
+</style>
+</html>

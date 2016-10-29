@@ -1,0 +1,5 @@
+tornado
+mysql-python
+torndb
+BeautifulSoup4
+pycrypto
