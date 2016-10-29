@@ -4,7 +4,8 @@ Tornado is a Python web framework and asynchronous networking library.
 <br/>
 And this application is for analyzing custom url
  like (https://en.wikipedia.org/wiki/Main_Page) and counts the frequency of use of each word on that page.
-
+<br/>
+This application uses tornado, torndb, BeautifulSoup4 and pycrypto
 <br/><br/>
 To run this application on your local machine please follow these steps:
 <br/>
@@ -26,7 +27,7 @@ $ pip install -r requirements.txt    # (to install all requirements)
 
 * Clone latest version
 ```
-$ git clone https://github.com/esl4m/\\
+$ git clone https://github.com/esl4m/Tornado-Word-Analyzer.git
 ```
 
 * Create mysql Database :
