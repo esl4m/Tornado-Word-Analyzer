@@ -13,23 +13,29 @@
         </form>
         {% try %}
             {% if data %}
-                <table id="example">
-                    <thead>
-                        <tr>
-                            <th>Word</th>
-                            <th>Number of Repeats</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for word, no_of_repeats in data%}
-                            <tr>
-                                <td>{{word}}</td>
-                                <td>{{no_of_repeats}}</td>
-                            </tr>
-                            {% end %}
-                        {% end %}
-                    </tbody>
-                </table>
+                <!--<table id="example">-->
+                    <!--<thead>-->
+                        <!--<tr>-->
+                            <!--<th>Word</th>-->
+                            <!--<th>Number of Repeats</th>-->
+                        <!--</tr>-->
+                    <!--</thead>-->
+                    <!--<tbody>-->
+                        <!--{% for word, no_of_repeats in data%}-->
+                            <!--<tr>-->
+                                <!--<td>{{word}}</td>-->
+                                <!--<td>{{no_of_repeats}}</td>-->
+                            <!--</tr>-->
+                        <!--{% end %}-->
+                    <!--</tbody>-->
+                <!--</table>-->
+                <br/><br/>
+                <div data-i2="css:[{fontSize:'8pt'},{fontSize:'30pt'}]">
+                    {% for word, no_of_repeats in data%}
+                        <span data-i2="rate:{{no_of_repeats}}">{{word}}</span>
+                    {% end %}
+                </div>
+            {% end %}
             {% except %}
         {% end %}
     </div>
@@ -65,4 +71,7 @@ body{
         }
 }
 </style>
+<script type="application/javascript">
+   i2.emph();
+</script>
 </html>
