@@ -2,7 +2,7 @@
 from Crypto.Cipher import XOR
 import base64
 import urllib
-import tornado.httpserver
+# import tornado.httpserver
 import tornado.ioloop
 import tornado.web
 import logging
@@ -142,9 +142,12 @@ class GetDataHandler(BaseHandler):
 def main():
     print("Server running .. ")
     tornado.options.parse_command_line()
-    http_server = tornado.httpserver.HTTPServer(Application())
-    http_server.listen(options.port)
-    tornado.ioloop.IOLoop.instance().start()
+    app = Application()
+    app.listen(8888)
+    tornado.ioloop.IOLoop.current().start()
+    # http_server = tornado.httpserver.HTTPServer(Application())
+    # http_server.listen(options.port)
+    # tornado.ioloop.IOLoop.instance().start()
 
 if __name__ == "__main__":
     main()
